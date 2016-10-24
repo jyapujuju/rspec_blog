@@ -32,12 +32,15 @@ RSpec.describe PostsController, type: :controller do
 
     context "with valid attributes" do
       it "redirects to root_path" do
-
+        post :create, post: FactoryGirl.attributes_for(:post)
+        expect(response).to redirect_to root_path
       end
     end
 
     context "with invalid attributes" do
       it "renders the new template" do
+        post :create, post: FactoryGirl.attributes_for(:invalid_post)
+        expect(response).to render_template :new
       end
     end
 

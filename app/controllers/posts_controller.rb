@@ -32,8 +32,13 @@
 
   def create
     @post = Post.create(post_params)
-    redirect_to root_path
+    if @post.valid?
+      redirect_to root_path
+    else
+      render :new
+    end
   end
+
   private
   def post_params
     params.require(:post).permit(:title,:author,:content)
