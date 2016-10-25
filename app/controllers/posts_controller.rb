@@ -2,7 +2,7 @@
   def index
     @posts = Post.all.order('created_at DESC')
   end
-  
+
   def edit
     @post = Post.find(params[:id])
   end
@@ -16,12 +16,14 @@
   def new
     @post = Post.new
   end
+
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
+    @post.update(post_params)
+    if @post.valid?
       redirect_to root_path
     else
-      render :edit, status: :unprocessable_entity
+      render :edit
     end
   end
 
