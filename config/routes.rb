@@ -54,5 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   root 'posts#index'
+  get 'dashboard' => 'posts#dashboard'
+  # dashboard 'posts#dashboard'
   resources :posts
 end

@@ -1,6 +1,10 @@
-<%= simple_form_for @post method: :patch do |f| %>
+<div class="container">
+<%= simple_form_for @post do |f| %>
   <%= f.input :title %>
   <%= f.input :author %>
   <%= f.input :content %>
+  <%= f.input :featured, as: :boolean, checked_value: true, unchecked_value: false %>
+
   <%= f.submit %>
 <% end %>
+</div>

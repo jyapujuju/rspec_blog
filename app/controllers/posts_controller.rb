@@ -1,8 +1,16 @@
  class PostsController < ApplicationController
   def index
-    @posts = Post.all.order('created_at DESC')
+    # @posts = Post.where(featured: false).limit(5)
+    @posts = Post.not_featured.limit(3)
+
+    @featured = Post.featured.last
+    # @featured = Post.where(featured: true).first
   end
 
+  def dashboard
+    @articles = Post.order("created_at DESC").paginate(:page => params[:page], :per_page => 15  )
+  end
+  
   def edit
     @post = Post.find(params[:id])
   end
@@ -28,7 +36,7 @@
   end
 
   def destroy
-    @post = Post.fint(params[:id])
+    @post = Post.find(params[:id])
     @post.destroy
     redirect_to root_path
   end
@@ -44,6 +52,6 @@
 
   private
   def post_params
-    params.require(:post).permit(:title,:author,:content)
+    params.require(:post).permit(:title,:author,:content,:featured)
   end
 end

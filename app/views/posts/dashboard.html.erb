@@ -1,0 +1,28 @@
+<div class="post">
+  <div class="container">
+    <div style="text-align:center;font-size:25px;"><%= link_to '+', new_post_path %></div>
+
+  <% @articles.each do |post| %>
+
+
+  <!-- <div class="col-xs-4"> -->
+
+  <div class="main-title-dashboard">
+      <span style="padding-right:20px;"><%= post.featured ? "[ o ]  " : "[ x ]  " %></span>
+    <%= post.title %>
+
+    <%= link_to 'edit', edit_post_path(post) %>
+    <%= link_to 'delete', post_path(post), method: :delete, data:{confirm: "are you sure?"} %>
+  </div>
+    <!-- <p class="article">
+      <!-- <strong><i><%= post.author %>:</i></strong> -->
+  <!-- </p> -->
+
+
+  <!-- </disv> -->
+  <% end %>
+
+
+  </div>
+
+</div>

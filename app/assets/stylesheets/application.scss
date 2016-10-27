@@ -15,16 +15,121 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
- html,body {
- height: 100%;
- background-color:    #EFFBF2;
- position: relative;
+ @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Oswald|Special+Elite|UnifrakturMaguntia');
+ @font-face {
+   font-family: "oldenglish";
+  //  src: url(/assets/fonts/oldenglish.ttf) format("truetype");
+   src: url(oldenglish.ttf) format("truetype");
+
+ }
+
+html,body {
+   height: 100%;
+   // background-color:    #EFFBF2;
+   position: relative;
+   background-image: url("repeating-vintage-paper-background.jpg");
+   background-repeat: repeat;
 }
+.header{
+  text-align: center;
+  padding-top: 20px;
+}
+.floral{
+  height: 30px;
+}
+a.headering{
+  // font-family: 'UnifrakturMaguntia', cursive;
+  font-family: 'oldenglish';
+  font-size: 7em;
+  text-decoration: none;
+  color: #333;
+}
+.slogan{
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 3px;
+}
+
+.center-image{
+  display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+hr.second-hairline{
+  border-color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-style: dashed;
+  border-width: 1px;
+}
+.nav{
+  font-family: 'Oswald', sans-serif;
+}
+.navbar-brand
+{
+    font-family: 'Oswald', sans-serif;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+}
+.navbar-toggle {
+    z-index:3;
+}
+hr.first-hairline{
+  border-color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.post{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .navbar-brand-pic{
   width: 24px;
   padding-top: 14px;
+
 }
 .navbar-brand{
   color: black;
   font-size: 14px;
+}
+.navbar-default{
+  // padding-top: 10%;
+  background-image: url("repeating-vintage-paper-background.jpg");
+}
+.featured-title{
+  font-family: 'Fjalla One', sans-serif;
+  text-align-last: justify;
+  font-size: 5em;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.main-title{
+  font-family: 'Fjalla One', sans-serif;
+  text-align-last: justify;
+  font-size: 1.2em;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.date{
+  text-align: center;
+}
+p.article{
+  -moz-column-width: 18em;
+  -moz-columns: 18em;
+  -webkit-columns: 18em;
+  columns: 18em;
+  text-align: justify;;
+  font-family: 'Special Elite', cursive;
+}
+.main-title-dashboard{
+  font-family: 'Special Elite', cursive;
+  text-align: center;;
+  font-size: 1.2em;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  padding-top: 10px;
 }

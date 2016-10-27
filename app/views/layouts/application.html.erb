@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="header">
+    <%= image_tag("29337.png",  alt: "like", class: "floral center-image",align: "middle") %>
+  <%= link_to "The Rspec Blog", root_path ,:class=>"headering"%>
+  <p class="slogan">The Super Secure Blogging Magazine</p>
+</div>
 <%= render 'layouts/navbar' %>
 <%= yield %>
 
